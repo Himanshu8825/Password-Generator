@@ -16,7 +16,7 @@
           class="display"
           data-passwordDisplay
         />
-        <button>
+        <button data-copy>
           <span data-copyMsg></span>
           <img
             src="./assets/copy-svgrepo-com.svg"
@@ -43,36 +43,34 @@
         data-lengthSlider
       />
 
-
-
       <div>
-        <input type="checkbox" id="uppercase">
-        <label for="upperCase">Include Uppercase Letters</label>
+        <input type="checkbox" id="uppercase" />
+        <label for="uppercase">Include Uppercase Letters</label>
       </div>
 
       <div>
-        <input type="checkbox" id="lowercase">
-        <label for="lowerCase">Include Lowercase Letters</label>
+        <input type="checkbox" id="lowercase" />
+        <label for="lowercase">Include Lowercase Letters</label>
       </div>
 
       <div>
-        <input type="checkbox" id="numbers">
+        <input type="checkbox" id="numbers" />
         <label for="numbers">Include Numbers </label>
       </div>
 
       <div>
-        <input type="checkbox" id="symbols">
+        <input type="checkbox" id="symbols" />
         <label for="symbols">Include Symbols </label>
       </div>
 
+      <div class="strength-container">
+        <p>Strength</p>
+        <div data-indicator></div>
+      </div>
 
-        <div class="strength-container">
-            <p>Strength</p>
-            <div data-indicator></div>
-        </div>
-
-            <button class="generaterButton">generate Password</button>
-
+      <button class="generaterButton">generate Password</button>
     </div>
+
+    <script src="index.js"></script>
   </body>
 </html>
