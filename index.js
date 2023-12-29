@@ -1,4 +1,4 @@
-const inputSlider = document.querySelector('[data-lengthSlider]');
+const inputSlider = document.querySelector('[ data-lengthSlider]');
 const lengthDisplay = document.querySelector('[data-lengthNumber]');
 const passwordDisplay = document.querySelector('[data-passwordDisplay]');
 const copyBtn = document.querySelector('[data-copy]');
@@ -17,15 +17,22 @@ let passwordLength = 10;
 let checkCount = 0;
 handleSlider();
 
+//!Set Straingth color to grey
+setIndicator("#ccc");
+
 //! Set password length
 function handleSlider() {
     inputSlider.value = passwordLength;
     lengthDisplay.innerText = passwordLength;
+    const min = inputSlider.min;
+    const max = inputSlider.max;
+    inputSlider.style.backgroundSize = ((passwordLength - min) * 100 / (max - min)) + "% 100%"
 }
 
 //! Set Indicator
 function setIndicator(color) {
     indicator.style.backgroundColor = color;
+    indicator.style.boxShadow = `0px 0px 12px 1px ${color}`;
 }
 
 //! Random Integer
@@ -114,7 +121,7 @@ function handleBoxchange() {
     });
 
     // Special Case
-    if(passwordLength < checkCount ) {
+    if (passwordLength < checkCount) {
         passwordLength = checkCount;
         handleSlider();
     }
@@ -127,7 +134,7 @@ allCheckBox.forEach((checkbox) => {
 inputSlider.addEventListener('input', (e) => {
     passwordLength = e.target.value;
     handleSlider();
-});
+})
 
 copyBtn.addEventListener('click', () => {
     if (password) {
